@@ -20,7 +20,7 @@ public class TradeExample implements Example {
         while (option == 1) {
             Locale.setDefault(Locale.US);
 
-            doTransaction(scanner);
+            _doTransaction(scanner);
 
             System.out.println(
                 "enter 1 to continue or anyone option to stop");
@@ -34,16 +34,22 @@ public class TradeExample implements Example {
 
         double receivedValue = scanner.nextDouble();
 
-        System.out.println("received value " + receivedValue);
+        System.out.printf("received value: [%s]\n", receivedValue);
 
-        System.out.printf("trade [%s]\n", total -= receivedValue);
-
-        scanner.close();
+        System.out.printf("trade $[%s]\n", total -= receivedValue);
     }
 
-    private void doTransaction(Scanner scanner) {
+    private void _doTransaction(Scanner scanner) {
+        System.out.println("digit the product name:");
+
         String name = scanner.nextLine();
+
+        System.out.println("digit the product price:");
+
         double price = scanner.nextDouble();
+
+        System.out.println("digit the product quantity: ");
+
         int quantity = scanner.nextInt();
 
         Product product =  new Product(name, price, quantity);

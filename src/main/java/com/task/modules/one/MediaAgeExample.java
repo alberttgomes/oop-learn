@@ -32,7 +32,7 @@ public class MediaAgeExample implements Example {
         double averageAge = (firstAge + secondAge) / 2.0;
 
         System.out.printf(
-            "The average age between [%s] and [%s] is [%s]",
+            "The average age between [%s] and [%s] is [%s]\n",
                 firstName, secondName, averageAge);
     }
 

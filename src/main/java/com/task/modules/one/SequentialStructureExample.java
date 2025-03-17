@@ -32,7 +32,6 @@ public class SequentialStructureExample implements Example {
         double price = area * squareMeterValue;
 
         System.out.printf("The price is $ %s \n", price);
-
     }
 
 }
