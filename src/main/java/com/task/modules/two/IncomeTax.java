@@ -86,20 +86,13 @@ public class IncomeTax implements Example {
 
         double cgAmount = amounts.capitalGain / 100 * 20;
 
-        double expensesAmounts = amounts.educationalExpenses + amounts.medicalExpenses;
-
-        double reductionAmount = 0.0;
-
         double taxAmounts = taxSalaryAmounts + cgAmount + psAmount;
 
-        double taxPercent = taxAmounts / 100 * 30;
+        double expensesAmounts = amounts.educationalExpenses + amounts.medicalExpenses;
 
-        if (expensesAmounts < taxPercent) {
-            reductionAmount = expensesAmounts;
-        }
-        else if (expensesAmounts > taxAmounts) {
-            reductionAmount = taxAmounts / 100 * 30;
-        }
+        double maxDeductible = taxAmounts * 30;
+
+        double reductionAmount = Math.min(expensesAmounts, maxDeductible);
 
         System.out.printf(
             "update amounts: %s\n", amounts.taxPay(taxSalaryAmounts, cgAmount, psAmount));
