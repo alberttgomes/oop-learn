@@ -93,7 +93,7 @@ public class Athletes implements Example {
             "1. Weight medium: " + _calculateWeightMediumValue(athletes) + "\n" +
             "2. Higher: " + _higher(athletes) + "\n" +
             "3. Man percent: " + manPercent + "\n" +
-    String.format("4. Higher woman medium: %.2f%n", _calculateWomanHighValue(athletes)) +
+            String.format("4. Higher woman medium: %.2f%n", _calculateWomanHighValue(athletes)) +
             "\tReports finished.";
 
         System.out.println(reportMessage);
