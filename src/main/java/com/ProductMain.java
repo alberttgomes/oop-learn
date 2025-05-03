@@ -1,6 +1,7 @@
 package com;
 
 import com.model.Product;
+import com.util.ProductUtil;
 
 import java.util.Scanner;
 
