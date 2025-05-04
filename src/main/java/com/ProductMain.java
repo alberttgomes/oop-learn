@@ -3,6 +3,8 @@ package com;
 import com.model.Product;
 import com.util.ProductUtil;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class ProductMain {
@@ -27,7 +29,9 @@ public class ProductMain {
 
         int operation = scanner.nextInt();
 
-        while(operation == 1 || operation == 2) {
+        List<Integer> supportedOperations = Arrays.asList(1, 2, 3);
+
+        while(supportedOperations.contains(operation)) {
             product = _process(product, operation, scanner);
 
             System.out.println("\nUpdated product data: " + product);
