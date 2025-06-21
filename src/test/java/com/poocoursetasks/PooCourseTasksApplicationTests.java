@@ -1,4 +1,4 @@
-package com.task.poocoursetasks;
+package com.poocoursetasks;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
