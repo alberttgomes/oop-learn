@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Sales",
+    "pay-day": 10,
+    "address": {
+      "email": "sales@topstore.com",
+      "phone": "+5581985563743"
+    }
+  }
+]

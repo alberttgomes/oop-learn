@@ -1,11 +1,10 @@
-package com.employee.client;
+package com.employee.builder;
 
+import com.employee.builder.util.ContentUtil;
 import com.employee.model.Employee;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -13,7 +12,8 @@ import org.json.JSONObject;
 public class EmployeeBuilder {
 
     public EmployeeBuilder build() {
-        JSONArray jsonArray = new JSONArray(_readContent());
+        JSONArray jsonArray = new JSONArray
+            (ContentUtil.readContent("employee-meta-data.json"));
 
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -29,19 +29,6 @@ public class EmployeeBuilder {
 
     public List<Employee> getEmployees() {
         return employees;
-    }
-
-    private String _readContent() throws RuntimeException {
-        ClassLoader classLoader = getClass().getClassLoader();
-
-        try (InputStream inputStream = classLoader.getResourceAsStream(
-                "employee-meta-data.json")) {
-            return new String(
-                Objects.requireNonNull(inputStream).readAllBytes());
-        }
-        catch (Exception exception) {
-            throw new RuntimeException(exception);
-        }
     }
 
     private final List<Employee> employees =

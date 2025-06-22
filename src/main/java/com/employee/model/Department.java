@@ -8,8 +8,9 @@ import java.util.List;
  */
 public class Department {
 
-    public Department(String name) {
+    public Department(String name, int payDay) {
         this.name = name;
+        this.payDay = payDay;
     }
     public void addEmployee(Employee employee) {
         this.employees.add(employee);
@@ -61,6 +62,8 @@ public class Department {
         sb.append("Pay Day: ").append(payDay).append("\n");
         sb.append("Email: ").append(_address.email).append("\n");
         sb.append("Phone: ").append(_address.phone).append("\n");
+        sb.append("How much employees the department have: ");
+        sb.append(employees.size()).append("\n");
 
         int index = 1;
 
@@ -71,6 +74,8 @@ public class Department {
         }
 
         sb.append("Payroll: ").append("\n\t");
+        sb.append("department ").append(name).append(" ");
+        sb.append("R$ ").append(payroll()).append("\n\t");
         sb.append("payment made every ").append(payDay).append(" day");
         sb.append("\n\t").append("employees:");
 

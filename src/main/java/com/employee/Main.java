@@ -1,6 +1,7 @@
 package com.employee;
 
-import com.employee.client.EmployeeBuilder;
+import com.employee.builder.DepartmentBuilder;
+import com.employee.builder.EmployeeBuilder;
 import com.employee.model.Department;
 import com.employee.model.Employee;
 
@@ -10,19 +11,18 @@ import com.employee.model.Employee;
 public class Main {
 
     public static void main(String[] args) {
-        Department department = new Department("sales");
+        for (Department department :
+                new DepartmentBuilder().build().getDepartments()) {
 
-        department.setAddress(
-            "sales@topstore.com", "+5581985563743");
-        department.setPayDay(10);
+            EmployeeBuilder employeeBuilder = new EmployeeBuilder().build();
 
-        EmployeeBuilder employeeBuilder = new EmployeeBuilder().build();
+            for (Employee employee : employeeBuilder.getEmployees()) {
+                department.addEmployee(employee);
+            }
 
-        for (Employee employee : employeeBuilder.getEmployees()) {
-            department.addEmployee(employee);
+            System.out.println(department);
+
         }
-
-        System.out.println(department);
     }
 
 }
