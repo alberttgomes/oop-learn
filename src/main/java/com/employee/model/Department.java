@@ -12,6 +12,7 @@ public class Department {
         this.name = name;
         this.payDay = payDay;
     }
+
     public void addEmployee(Employee employee) {
         this.employees.add(employee);
     }
