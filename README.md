@@ -16,7 +16,7 @@ Execute follow command:
 ## How to run
 
 ```
-build/libs/poo-course-tasks-0.0.1-SNAPSHOT.jar
+java -jar build/libs/poo-course-tasks-0.0.1-SNAPSHOT.jar
 ```
 
 ### Test with other values
